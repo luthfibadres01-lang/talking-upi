@@ -198,12 +198,33 @@
     </div>
 
     <div class="chat-container">
-        <div class="subtitle-box" id="subtitle">Halo! Tanyakan sesuatu padaku...</div>
-        <div class="input-group">
-            <input type="text" id="userInput" placeholder="Tanyakan sesuatu ke UPI..." autocomplete="off">
-            <button id="sendBtn">KIRIM</button>
-        </div>
-    </div>
+       <!-- Tambahkan ini di dalam <div class="chat-container">, sebelum <div class="subtitle-box"> -->
+<div class="voice-selector">
+    <label><input type="radio" name="gender" value="female" checked> 👩 Perempuan</label>
+    <label><input type="radio" name="gender" value="male"> 👨 Laki-laki</label>
+</div>
+
+<style>
+    .voice-selector {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 15px;
+        font-size: 0.9rem;
+    }
+    .voice-selector label {
+        cursor: pointer;
+        background: rgba(255,255,255,0.1);
+        padding: 5px 15px;
+        border-radius: 20px;
+        transition: 0.3s;
+    }
+    .voice-selector input { display: none; }
+    .voice-selector label:has(input:checked) {
+        background: var(--primary-color);
+        color: #111;
+    }
+</style>
 
     <script>
         const sendBtn = document.getElementById('sendBtn');
